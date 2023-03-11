@@ -4,10 +4,7 @@ import { galleryItems } from './gallery-items';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-// console.log(galleryItems);
-
 const galleryEl = document.querySelector('.gallery');
-// console.log(galleryEl);
 
 const markupToGallery = galleryItems
   .map(
@@ -20,8 +17,6 @@ const markupToGallery = galleryItems
 </a>`
   )
   .join('');
-
-// console.log(markupToGallery);
 
 galleryEl.insertAdjacentHTML('afterbegin', markupToGallery);
 
