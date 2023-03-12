@@ -4,7 +4,7 @@ const form = document.querySelector('.feedback-form');
 const inputEl = document.querySelector('.feedback-form input');
 const textareaEl = document.querySelector('.feedback-form textarea');
 const SAVED_DATA = 'feedback-form-state';
-const formData = {};
+let formData = {};
 
 form.addEventListener('submit', handleFormSubmit);
 form.addEventListener('input', throttle(handleFormDataInput, 1000));
@@ -18,6 +18,7 @@ function handleFormDataInput(event) {
 
 function handleFormSubmit(event) {
   event.preventDefault();
+  console.log(formData);
 
   event.currentTarget.reset();
   textareaEl.textContent = '';
@@ -30,7 +31,10 @@ function updateFormTextContent() {
 
   if (parsedData) {
     const { email, message } = parsedData;
+    if (email) {
+      inputEl.value = email;
+    }
     textareaEl.textContent = message;
-    inputEl.value = email;
+    formData = parsedData;
   }
 }
