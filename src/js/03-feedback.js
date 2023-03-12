@@ -29,8 +29,7 @@ function updateFormTextContent() {
   const savedMessage = localStorage.getItem(SAVED_DATA);
   const parsedData = JSON.parse(savedMessage);
 
-  if (parsedData) {
-    const { email, message } = parsedData;
+  if ({ email, message }) {
     if (email) {
       inputEl.value = email;
     }
