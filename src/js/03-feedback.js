@@ -31,7 +31,8 @@ function updateFormTextContent() {
 
   if (parsedData) {
     const { email, message } = parsedData;
-    if (email) {
+
+    if (email !== '') {
       inputEl.value = email;
     }
     textareaEl.textContent = message;
