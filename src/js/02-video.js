@@ -17,4 +17,5 @@ const currentTime = localStorage.getItem(CURRENT_TIME)
   ? localStorage.getItem(CURRENT_TIME)
   : 0;
 
+console.log(Number(currentTime));
 player.setCurrentTime(Number(currentTime));
